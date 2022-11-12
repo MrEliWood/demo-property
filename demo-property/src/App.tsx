@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import Gallery from './components/Gallery';
+import Header from './components/Header';
+import Home from './components/Home';
+import Video from './components/Video';
+import Virtual from './components/Virtual';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	// set landing tab
+	const [currentTab, setCurrentTab] = useState('home');
+
+	// render body based on selected tab
+	const renderBody = () => {
+		switch (currentTab) {
+			case 'home':
+				return <Home />;
+			case 'gallery':
+				return <Gallery />;
+			case 'video':
+				return <Video />;
+			case 'virtual':
+				return <Virtual />;
+			case 'contact':
+				return <Contact />;
+			default:
+				return <Home />;
+		}
+	};
+
+	return (
+		<div className='App'>
+			<Header currentTab={currentTab} setCurrentTab={setCurrentTab} />
+			{renderBody()}
+			<Footer />
+		</div>
+	);
 }
 
 export default App;
