@@ -1,0 +1,74 @@
+/* import from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+/* global styles */
+body {
+	font-family: 'Nunito Sans', sans-serif;
+	line-height: 1.25;
+	font-size: 16px;
+	font-weight: 200;
+	letter-spacing: 0.05rem;
+}
+
+/* heading sizes */
+h1 {
+	font-size: 2.8rem;
+	font-weight: 800;
+	letter-spacing: 0.05rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	letter-spacing: 0.05rem;
+}
+
+h3 {
+	font-size: 1.2rem;
+	font-weight: 400;
+	letter-spacing: 0.05rem;
+}
+
+h4 {
+	font-size: 1rem;
+	font-weight: 200;
+	letter-spacing: 0.05rem;
+}
+
+/* button sizes */
+button {
+	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 0.05rem;
+}
+
+/* small screens */
+@media screen and (max-width: 1024px) {
+	h1 {
+		font-size: 2.4rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	/* global styles */
+	body {
+		font-size: 16px;
+	}
+
+	/* heading sizes */
+	h1 {
+		font-size: 1.8rem;
+	}
+
+	h2 {
+		font-size: 1.2rem;
+	}
+
+	h3 {
+		font-size: 1.1rem;
+	}
+
+	h4 {
+		font-size: 1rem;
+	}
+}
