@@ -1,7 +1,11 @@
 import React from 'react';
 import './style.css';
 
-const Video: React.FC = () => {
+interface Props {
+	data: any;
+}
+
+const Video: React.FC<Props> = ({ data }) => {
 	return <h1>Video</h1>;
 };
 

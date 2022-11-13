@@ -1,0 +1,88 @@
+.home-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--huge);
+	background: var(--light);
+	color: var(--dark);
+	text-align: center;
+	width: 100vw;
+	padding: var(--huge);
+}
+
+.home-image-break {
+	display: flex;
+	/* background-attachment: fixed; */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100vw;
+	height: 80vh;
+}
+
+.property-description {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: var(--large) var(--huge);
+}
+
+.property-details {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: var(--large) var(--huge);
+}
+
+.detail {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: var(--tiny);
+}
+
+.property-features {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--large);
+}
+
+.features-image {
+	width: 60%;
+}
+
+.features {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	flex-grow: 1;
+}
+
+.brokerage-funnel {
+	background-image: linear-gradient(var(--dark50), var(--dark50)), url('../../../public/assets/images/brokerage-image.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	padding: var(--huge);
+	width: 100%;
+}
+
+.brokerage-details {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: var(--medium);
+	text-align: center;
+	width: 100%;
+	padding: var(--large) var(--huge);
+}
+
+.brokerage-details h3 {
+	line-height: 1.5;
+	max-width: 50vw;
+}

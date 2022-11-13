@@ -1,7 +1,11 @@
 import React from 'react';
 import './style.css';
 
-const Gallery: React.FC = () => {
+interface Props {
+	data: any;
+}
+
+const Gallery: React.FC<Props> = ({ data }) => {
 	return <h1>Gallery</h1>;
 };
 

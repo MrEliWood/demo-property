@@ -4,7 +4,7 @@ header {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	background-image: url('../../../public/assets/images/image-46.jpg');
+	background-image: url('../../../public/assets/images/image-1.jpg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -27,7 +27,7 @@ header {
 .header-banner {
 	display: flex;
 	justify-content: space-between;
-	background: linear-gradient(var(--dark50), transparent);
+	background: linear-gradient(var(--dark75), transparent);
 	width: 100%;
 	padding: var(--large);
 }
@@ -56,10 +56,6 @@ header {
 	z-index: 1;
 }
 
-.header-logo {
-	width: 240px;
-}
-
 nav {
 	display: flex;
 	align-items: center;
@@ -70,6 +66,8 @@ nav {
 .nav-links {
 	display: flex;
 	gap: var(--medium);
+	text-align: center;
+	letter-spacing: 0.075rem;
 }
 
 .tab {

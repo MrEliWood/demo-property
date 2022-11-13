@@ -1,7 +1,11 @@
 import React from 'react';
 import './style.css';
 
-const Footer: React.FC = () => {
+interface Props {
+	data: any;
+}
+
+const Footer: React.FC<Props> = ({ data }) => {
 	return (
 		<footer>
 			<h1>Footer</h1>

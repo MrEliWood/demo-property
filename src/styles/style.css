@@ -13,8 +13,8 @@
 	align-items: center;
 	background: var(--dark);
 	width: 100vw;
-	padding: var(--large);
 	z-index: 5;
+	animation: fade-in 1s both 1s;
 }
 
 ::placeholder {
@@ -47,4 +47,8 @@ svg {
 	stroke: currentColor;
 	stroke-width: 4;
 	fill: none;
+}
+
+.brokerage-logo {
+	height: 20px;
 }

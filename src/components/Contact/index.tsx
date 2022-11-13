@@ -1,7 +1,11 @@
 import React from 'react';
 import './style.css';
 
-const Contact: React.FC = () => {
+interface Props {
+	data: any;
+}
+
+const Contact: React.FC<Props> = ({ data }) => {
 	return <h1>Contact</h1>;
 };
 

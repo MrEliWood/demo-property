@@ -1,7 +1,11 @@
 import React from 'react';
 import './style.css';
 
-const Virtual: React.FC = () => {
+interface Props {
+	data: any;
+}
+
+const Virtual: React.FC<Props> = ({ data }) => {
 	return <h1>Virtual Tour</h1>;
 };
 

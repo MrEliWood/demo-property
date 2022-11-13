@@ -34,8 +34,8 @@ const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
 	return (
 		<header className={currentTab === 'home' ? 'header' : 'header-collapsed'}>
 			<div className='header-banner'>
-				<a href={data.url}>
-					<img className='header-logo' src='./assets/logos/header-logo.png' alt='Listing agent logo' />
+				<a href={data.url} target='_blank' rel='noreferrer'>
+					<img className='brokerage-logo' src='./assets/logos/logo-light.png' alt='Listing agent logo' />
 				</a>
 				<nav onClick={handleNavClick}>
 					<ul className='nav-links'>
