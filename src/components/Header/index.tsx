@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
-	// set current tab based on user selection
+	// set current tab and header style based on user selection
 	const handleNavClick = (e: any) => {
 		switch (e.target.id) {
 			case 'nav-home':
@@ -56,6 +56,11 @@ const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
 						Contact
 					</button>
 				</nav>
+			</div>
+
+			<div className='header-address'>
+				<h2>{data.city}</h2>
+				<h1>{data.address}</h1>
 			</div>
 		</header>
 	);

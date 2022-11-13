@@ -1,19 +1,25 @@
 header {
-	position: relative;
+	position: sticky;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	background-image: url('../../../public/assets/images/image-46.jpg');
-	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	text-shadow: var(--shadow);
 	height: 100vh;
 	width: 100vw;
-	padding: var(--large);
+	overflow: hidden;
 	transition: all 1s ease;
 }
 
+.header {
+	background-attachment: local;
+}
+
 .header-collapsed {
-	background-image: url('../../../public/assets/images/image-46.jpg');
 	background-attachment: local;
 	height: 180px;
 }
@@ -21,18 +27,9 @@ header {
 .header-banner {
 	display: flex;
 	justify-content: space-between;
-	width: 100%;
-}
-
-/* banner gradient backdrop */
-header::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 20%;
-	width: 100vw;
 	background: linear-gradient(var(--dark50), transparent);
+	width: 100%;
+	padding: var(--large);
 }
 
 .header-collapsed::after,
@@ -88,4 +85,16 @@ nav {
 .tab:hover {
 	cursor: pointer;
 	border-bottom: 1px solid var(--light);
+}
+
+.header-address {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--small);
+	background: linear-gradient(transparent, var(--dark25));
+	width: 100%;
+	padding: var(--large);
 }
