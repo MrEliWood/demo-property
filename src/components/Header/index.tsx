@@ -1,4 +1,5 @@
 import React from 'react';
+import Vimeo from '@u-wave/react-vimeo';
 import './style.css';
 
 interface Props {
@@ -33,6 +34,7 @@ const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
 
 	return (
 		<header className={currentTab === 'home' ? 'header' : 'header-collapsed'}>
+			{currentTab === 'home' && <Vimeo className='background-video' video='https://vimeo.com/692009875' height={window.innerHeight} controls={false} loop={true} muted={true} background={true} autoplay />}
 			<div className='header-banner'>
 				<a href={data.url} target='_blank' rel='noreferrer'>
 					<img className='brokerage-logo' src='./assets/logos/logo-light.png' alt='Listing agent logo' />
