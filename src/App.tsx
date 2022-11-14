@@ -38,11 +38,11 @@ function App() {
 		agent: 'Agent Name',
 		brokerage: 'Compass Real Estate',
 		copy: 'Compass is building the first modern real estate platform, pairing the industry’s top talent with technology to make the search and sell experience intelligent and seamless.',
-		phone: '(123) 456-7890',
+		phone: '1234567890',
 		email: 'agent@brokerage.ex',
 
 		// brokerage link
-		url: 'https://www.compass.com'
+		url: 'www.compass.com'
 	};
 
 	// --------------------------------------------------

@@ -19,12 +19,12 @@ const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
 	const handleNavClick = (e: any) => {
 		if (currentTab === 'home') {
 			setVideoState({ animation: 'fade-out 1s both', height: '20vh' });
-		} else {
-			setVideoState({ animation: 'fade-in 1s both 1s', height: '100vh' });
 		}
+
 		switch (e.target.id) {
 			case 'nav-home':
 				setCurrentTab('home');
+				setVideoState({ animation: 'fade-in 1s both 1s', height: '100vh' });
 				break;
 			case 'nav-gallery':
 				setCurrentTab('gallery');
