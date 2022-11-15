@@ -35,10 +35,11 @@ function App() {
 
 		// broker info
 		agent: 'Agent Name',
-		brokerage: 'Compass Real Estate',
-		copy: 'Compass is building the first modern real estate platform, pairing the industry’s top talent with technology to make the search and sell experience intelligent and seamless.',
 		phone: '1234567890',
 		email: 'agent@brokerage.ex',
+		brokerage: 'Compass Real Estate',
+		copy: 'Compass is building the first modern real estate platform, pairing the industry’s top talent with technology to make the search and sell experience intelligent and seamless.',
+		disclaimer: 'Compass is a licensed real estate broker and abides by equal housing opportunity laws. All material presented herein is intended for informational purposes only. Information is compiled from sources deemed reliable but is subject to errors, omissions, changes in price, condition, sale, or withdrawal without notice. No statement is made as to accuracy of any description. All measurements and square footages are approximate. This is not intended to solicit property already listed. Nothing herein shall be construed as legal, accounting or other professional advice outside the realm of real estate brokerage.',
 
 		// brokerage link
 		url: 'www.compass.com'

@@ -15,7 +15,7 @@ footer {
 	justify-content: space-between;
 	gap: var(--medium);
 	width: 100%;
-	max-width: 1800px;
+	max-width: var(--maxWidth);
 	padding: var(--large);
 }
 
@@ -33,4 +33,18 @@ footer {
 
 .footer-contact-form {
 	width: 50%;
+}
+
+.footer-branding {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--medium);
+	text-align: center;
+	width: 100%;
+}
+
+.legal-copy {
+	font-size: 0.8rem;
+	font-weight: 200;
 }

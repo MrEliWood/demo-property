@@ -7,7 +7,7 @@
 	color: var(--dark);
 	text-align: center;
 	width: 100vw;
-	max-width: 1800px;
+	max-width: var(--maxWidth);
 	padding: var(--huge);
 }
 

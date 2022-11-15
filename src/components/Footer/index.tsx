@@ -189,7 +189,14 @@ const Footer: React.FC<Props> = ({ data }) => {
 				</form>
 			</div>
 
-			<div className='footer-section'></div>
+			<div className='footer-section'>
+				<div className='footer-branding'>
+					<a href={data.url} target='_blank' rel='noreferrer'>
+						<img className='brokerage-logo' src='./assets/logos/logo-dark.png' alt='Listing agent logo' />
+					</a>
+					<p className='legal-copy'>{data.disclaimer}</p>
+				</div>
+			</div>
 		</footer>
 	);
 };

@@ -31,9 +31,16 @@ header {
 
 .header-banner {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	background: linear-gradient(var(--dark75), transparent);
 	width: 100%;
+}
+
+.header-banner-content {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	max-width: var(--maxWidth);
 	padding: var(--large);
 }
 

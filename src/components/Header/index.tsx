@@ -53,28 +53,30 @@ const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
 		<header className={currentTab === 'home' ? 'header' : 'header-collapsed'}>
 			<Vimeo id='background-video' className='background-video' style={videoState} video='https://vimeo.com/692009875' height={window.innerHeight} controls={false} loop={true} muted={true} background={true} autoplay />
 			<div className='header-banner'>
-				<a href={data.url} target='_blank' rel='noreferrer'>
-					<img className='brokerage-logo' src='./assets/logos/logo-light.png' alt='Listing agent logo' />
-				</a>
-				<nav onClick={handleNavClick}>
-					<ul className='nav-links'>
-						<li id='nav-home' className={currentTab === 'home' ? 'tab-active' : 'tab'}>
-							Home
-						</li>
-						<li id='nav-gallery' className={currentTab === 'gallery' ? 'tab-active' : 'tab'}>
-							Gallery
-						</li>
-						<li id='nav-video' className={currentTab === 'video' ? 'tab-active' : 'tab'}>
-							Video
-						</li>
-						<li id='nav-virtual' className={currentTab === 'virtual' ? 'tab-active' : 'tab'}>
-							Virtual Tour
-						</li>
-					</ul>
-					<button id='nav-contact' className='button-light'>
-						Contact
-					</button>
-				</nav>
+				<div className='header-banner-content'>
+					<a href={data.url} target='_blank' rel='noreferrer'>
+						<img className='brokerage-logo' src='./assets/logos/logo-light.png' alt='Listing agent logo' />
+					</a>
+					<nav onClick={handleNavClick}>
+						<ul className='nav-links'>
+							<li id='nav-home' className={currentTab === 'home' ? 'tab-active' : 'tab'}>
+								Home
+							</li>
+							<li id='nav-gallery' className={currentTab === 'gallery' ? 'tab-active' : 'tab'}>
+								Gallery
+							</li>
+							<li id='nav-video' className={currentTab === 'video' ? 'tab-active' : 'tab'}>
+								Video
+							</li>
+							<li id='nav-virtual' className={currentTab === 'virtual' ? 'tab-active' : 'tab'}>
+								Virtual Tour
+							</li>
+						</ul>
+						<button id='nav-contact' className='button-light'>
+							Contact
+						</button>
+					</nav>
+				</div>
 			</div>
 
 			<div className='header-address'>
