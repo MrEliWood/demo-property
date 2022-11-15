@@ -1,3 +1,4 @@
+/* global */
 .App {
 	display: flex;
 	flex-direction: column;
@@ -7,27 +8,11 @@
 	color: var(--light);
 }
 
-.body {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background: var(--dark);
-	width: 100vw;
-	z-index: 5;
-	animation: fade-in 1s both 1s;
-}
-
-::placeholder {
-	font-weight: 200;
-}
-
-::marker {
-	font-weight: 500;
-}
-
+/* buttons */
 button {
 	background: none;
 	padding: var(--small) var(--medium);
+	width: fit-content;
 }
 
 .button-light {
@@ -41,6 +26,78 @@ button {
 	background: var(--light);
 }
 
+.button-dark {
+	color: var(--dark);
+	border: 2px solid var(--dark);
+}
+
+.button-dark:hover {
+	cursor: pointer;
+	color: var(--light);
+	background: var(--dark);
+}
+
+/* input */
+input,
+textarea {
+	display: flex;
+	border: none;
+	resize: none;
+	box-shadow: inset 0 0 2px var(--dark25);
+	padding: 10px var(--small);
+}
+
+textarea {
+	height: var(--huge);
+}
+
+/* forms */
+form {
+	display: flex;
+	flex-direction: column;
+	gap: var(--medium);
+}
+
+.form-section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--small);
+}
+
+.form-line {
+	display: flex;
+	gap: var(--medium);
+	width: 100%;
+}
+
+.form-item {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.form-phone {
+	display: flex;
+	gap: var(--small);
+}
+
+.phone-three {
+	width: 60px;
+}
+
+.phone-four {
+	width: 70px;
+}
+
+::placeholder {
+	font-weight: 200;
+}
+
+::marker {
+	font-weight: 500;
+}
+
+/* misc */
 svg {
 	stroke-linejoin: round;
 	stroke-linecap: round;
@@ -49,6 +106,18 @@ svg {
 	fill: none;
 }
 
+/* global body (excludes header and footer) */
+.body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: var(--light);
+	width: 100vw;
+	z-index: 5;
+	animation: fade-in 1s both 1s;
+}
+
+/* reusable components */
 .brokerage-logo {
 	height: 20px;
 }

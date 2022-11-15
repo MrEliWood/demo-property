@@ -12,6 +12,25 @@ footer {
 
 .footer-section {
 	display: flex;
+	justify-content: space-between;
+	gap: var(--medium);
+	width: 100%;
+	max-width: 1800px;
+	padding: var(--large);
+}
+
+.footer-contact-details {
+	display: flex;
 	flex-direction: column;
 	gap: var(--medium);
+}
+
+.footer-contact-details-section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--tiny);
+}
+
+.footer-contact-form {
+	width: 50%;
 }
