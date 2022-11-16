@@ -4,11 +4,11 @@
 
 Promotional websites showcasing a property for sale or for rent, featuring all important property details, engaging potential customers and funneling high value traffic.
 
-[![Screenshot of the application](./assets/screenshots/porefection-screen-shot.png)](http://mreliwood.github.io/property-demo)
+[![Screenshot of the application](./public/assets/screenshots/screenshot.png)](http://mreliwood.github.io/demo-property)
 
 ## Table of Contents
 
--  [Deployed Application](http://mreliwood.github.io/property-demo)
+-  [Deployed Link](http://mreliwood.github.io/demo-property)
 -  [License](#license)
 -  [Contributing](#contributing)
 -  [Tests](#tests)
