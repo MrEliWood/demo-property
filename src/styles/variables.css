@@ -15,7 +15,7 @@
 	--dark10: rgba(0, 0, 0, 0.1);
 
 	--gray: gray;
-	--lightgray: rgb(215, 215, 215);
+	--lightgray: hsl(0, 0%, 90%);
 	--darkgray: rgb(30, 30, 30);
 
 	--accent: #2196f3;
