@@ -1,0 +1,14 @@
+.floor-plans {
+	display: flex;
+	justify-content: space-evenly;
+	background: var(--dark);
+	width: 100vw;
+	max-width: var(--maxWidth);
+	padding: var(--large) var(--large) var(--huge) var(--large);
+	z-index: 0;
+}
+
+.plan {
+	object-fit: contain;
+	height: 65vh;
+}

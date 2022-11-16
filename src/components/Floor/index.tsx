@@ -6,7 +6,12 @@ interface Props {
 }
 
 const Floor: React.FC<Props> = ({ data }) => {
-	return <h1>Floorplan</h1>;
+	return (
+		<div className='floor-plans'>
+			<img className='plan' src='./assets/plans/floor-1.png' alt='first floor blueprint' />
+			<img className='plan' src='./assets/plans/floor-2.png' alt='second floor blueprint' />
+		</div>
+	);
 };
 
 export default Floor;

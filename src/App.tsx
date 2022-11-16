@@ -5,7 +5,6 @@ import Footer from './components/Footer';
 import Gallery from './components/Gallery';
 import Header from './components/Header';
 import Home from './components/Home';
-import Video from './components/Video';
 import Floor from './components/Floor';
 
 // import styles
@@ -83,7 +82,7 @@ function App() {
 			case 'gallery':
 				return <Gallery data={data} />;
 			case 'video':
-				return <Video data={data} />;
+				return '';
 			case 'floor':
 				return <Floor data={data} />;
 			case 'contact':
