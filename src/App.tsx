@@ -35,6 +35,7 @@ interface Data {
 	copy: string;
 	disclaimer: string;
 	url: string;
+	images: number;
 }
 
 function App() {
@@ -66,7 +67,10 @@ function App() {
 		disclaimer: 'Compass is a licensed real estate broker and abides by equal housing opportunity laws. All material presented herein is intended for informational purposes only. Information is compiled from sources deemed reliable but is subject to errors, omissions, changes in price, condition, sale, or withdrawal without notice. No statement is made as to accuracy of any description. All measurements and square footages are approximate. This is not intended to solicit property already listed. Nothing herein shall be construed as legal, accounting or other professional advice outside the realm of real estate brokerage.',
 
 		// brokerage link
-		url: 'www.compass.com'
+		url: 'www.compass.com',
+
+		// total number of photos
+		images: 7
 	};
 
 	// --------------------------------------------------

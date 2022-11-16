@@ -33,7 +33,7 @@ const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
 			case 'nav-gallery':
 				setCurrentTab('gallery');
 				setHeaderOpacity({ opacity: '1' });
-				setNavOpacity({ opacity: '0.25' });
+				setNavOpacity({ opacity: '1' });
 				setVideoState({ animation: 'fade-out 1s both', height: '20vh' });
 				setVideoVolume(0);
 				break;
