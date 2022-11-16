@@ -141,6 +141,16 @@ const Footer: React.FC<Props> = ({ data }) => {
 					<a href={data.url} target='_blank' rel='noreferrer'>
 						<h4>{data.url}</h4>
 					</a>
+
+					<div className='icon-block'>
+						<a href={data.facebook} target='_blank' rel='noreferrer'>
+							<img className='social-icon' src='./assets/icons/facebook.png' alt='facebook icon' />
+						</a>
+
+						<a href={data.instagram} target='_blank' rel='noreferrer'>
+							<img className='social-icon' src='./assets/icons/instagram.png' alt='instagram icon' />
+						</a>
+					</div>
 				</div>
 
 				<form className='footer-contact-form'>

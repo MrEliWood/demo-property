@@ -121,3 +121,12 @@ svg {
 .brokerage-logo {
 	height: 20px;
 }
+
+.icon-block {
+	display: flex;
+	gap: var(--small);
+}
+
+.social-icon {
+	width: 20px;
+}

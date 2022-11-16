@@ -6,7 +6,7 @@ import Gallery from './components/Gallery';
 import Header from './components/Header';
 import Home from './components/Home';
 import Video from './components/Video';
-import Virtual from './components/Virtual';
+import Floor from './components/Floor';
 
 // import styles
 import './styles/variables.css';
@@ -15,11 +15,34 @@ import './styles/fonts.css';
 import './styles/style.css';
 import './styles/animations.css';
 
+interface Data {
+	address: string;
+	city: string;
+	beds: string;
+	baths: string;
+	sqft: string;
+	lot: string;
+	year: string;
+	price: string;
+	description: string;
+	features: string[];
+	mls: string;
+	agent: string;
+	phone: string;
+	email: string;
+	facebook: string;
+	instagram: string;
+	brokerage: string;
+	copy: string;
+	disclaimer: string;
+	url: string;
+}
+
 function App() {
 	// INPUT PROPERTY INFO
 	// --------------------------------------------------
 
-	const data = {
+	const data: Data = {
 		// property info
 		address: '123 Property Address',
 		city: 'Bellevue, WA',
@@ -37,6 +60,8 @@ function App() {
 		agent: 'Agent Name',
 		phone: '1234567890',
 		email: 'agent@brokerage.ex',
+		facebook: 'www.facebook.com/compass',
+		instagram: 'www.instagram.com/compass',
 		brokerage: 'Compass Real Estate',
 		copy: 'Compass is building the first modern real estate platform, pairing the industry’s top talent with technology to make the search and sell experience intelligent and seamless.',
 		disclaimer: 'Compass is a licensed real estate broker and abides by equal housing opportunity laws. All material presented herein is intended for informational purposes only. Information is compiled from sources deemed reliable but is subject to errors, omissions, changes in price, condition, sale, or withdrawal without notice. No statement is made as to accuracy of any description. All measurements and square footages are approximate. This is not intended to solicit property already listed. Nothing herein shall be construed as legal, accounting or other professional advice outside the realm of real estate brokerage.',
@@ -59,8 +84,8 @@ function App() {
 				return <Gallery data={data} />;
 			case 'video':
 				return <Video data={data} />;
-			case 'virtual':
-				return <Virtual data={data} />;
+			case 'floor':
+				return <Floor data={data} />;
 			case 'contact':
 				return '';
 			default:
