@@ -12,14 +12,13 @@
 .gallery-grid {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 	align-items: flex-start;
 	padding: var(--large);
 }
 
 .grid-photo {
 	object-fit: contain;
-	width: 30%;
+	width: 32%;
 }
 
 .grid-photo:hover {
@@ -47,9 +46,9 @@
 
 .carousel-photo {
 	display: flex;
-	object-fit: contain;
+	object-fit: cover;
 	height: 100%;
-	max-width: 100%;
+	max-width: 90%;
 }
 
 .arrow {
@@ -107,16 +106,48 @@
 
 /* large screens */
 @media screen and (max-width: 1200px) {
+	.gallery-grid {
+		padding: var(--medium);
+	}
+
+	.gallery-carousel {
+		padding: var(--large) var(--medium) 0 var(--medium);
+	}
+
+	.close-carousel-button {
+		right: var(--medium);
+	}
 }
 
 /* small screens */
 @media screen and (max-width: 1024px) {
+	.gallery-grid {
+		padding: var(--small);
+	}
+
+	.gallery-carousel {
+		padding: var(--medium) var(--small) 0 var(--small);
+	}
+
+	.close-carousel-button {
+		right: var(--small);
+	}
 }
 
 /* tablets */
 @media screen and (max-width: 768px) {
+	.gallery-grid {
+		padding: var(--small);
+	}
+
+	.grid-photo {
+		width: 100%;
+	}
 }
 
 /* phones */
 @media screen and (max-width: 480px) {
+	.gallery-grid {
+		padding: var(--small) 0;
+	}
 }

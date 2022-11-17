@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 
 interface Props {
@@ -9,6 +9,7 @@ const Gallery: React.FC<Props> = ({ data }) => {
 	// set default state
 	const [carousel, setCarousel] = useState(false);
 	const [active, setActive] = useState(0);
+	const [gridStyle, setGridStyle] = useState({ gap: '' });
 
 	// initialize images array
 	const images: string[] = [];
@@ -21,9 +22,11 @@ const Gallery: React.FC<Props> = ({ data }) => {
 	const galleryElement = document.getElementById('gallery');
 
 	const handleImageSelect = (i: number) => {
-		setCarousel(true);
-		setActive(i);
-		galleryElement?.scrollIntoView();
+		if (window.innerWidth > 768) {
+			setCarousel(true);
+			setActive(i);
+			galleryElement?.scrollIntoView();
+		}
 	};
 
 	// handle carousel navigation
@@ -42,10 +45,59 @@ const Gallery: React.FC<Props> = ({ data }) => {
 		}
 	};
 
+	// set grid style based on screen size
+	const handleGridSize = () => {
+		// desktop
+		if (window.innerWidth > 1200) {
+			const grid = window.innerWidth - 120;
+
+			const style = {
+				gap: `${grid * 0.02}px`
+			};
+
+			setGridStyle(style);
+
+			// large screens
+		} else if (window.innerWidth > 1024) {
+			const grid = window.innerWidth - 60;
+
+			const style = {
+				gap: `${grid * 0.02}px`
+			};
+
+			setGridStyle(style);
+
+			// small screens
+		} else if (window.innerWidth > 768) {
+			const grid = window.innerWidth - 30;
+
+			const style = {
+				gap: `${grid * 0.02}px`
+			};
+
+			setGridStyle(style);
+
+			// tablets
+		} else {
+			const style = {
+				gap: `15px`
+			};
+
+			setGridStyle(style);
+		}
+	};
+
+	// listen for background video load
+	useEffect(() => {
+		handleGridSize();
+		window.addEventListener('resize', handleGridSize);
+		// eslint-disable-next-line
+	}, []);
+
 	return (
 		<div id='gallery' className='gallery'>
 			{carousel ? (
-				<div className='gallery-carousel' style={{ gap: `${carousel ? 0 : window.innerWidth / 20}px 0` }}>
+				<div className='gallery-carousel'>
 					<svg className='close-carousel-button' viewBox='0 0 30 22' width='25' height='25' onClick={() => setCarousel(false)}>
 						<line x1='2' y1='-4' x2='28' y2='26' />
 						<line x1='2' y1='26' x2='28' y2='-4' />
@@ -68,7 +120,7 @@ const Gallery: React.FC<Props> = ({ data }) => {
 					</div>
 				</div>
 			) : (
-				<div className='gallery-grid' style={{ gap: `${window.innerWidth / 20}px 0` }}>
+				<div className='gallery-grid' style={gridStyle}>
 					{images.map((image, i) => {
 						return <img key={i} className='grid-photo' src={image} alt='property gallery piece' onClick={() => handleImageSelect(i)} />;
 					})}

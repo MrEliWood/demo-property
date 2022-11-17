@@ -103,12 +103,13 @@ const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
 	// listen for background video load
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
+		// window.addEventListener('resize', handleMobileNavClick);
 		setVideoState({ animation: 'fade-in 1s both 1s', height: '100vh' });
 		// eslint-disable-next-line
 	}, [video]);
 
 	return (
-		<header className={currentTab === 'home' || currentTab === 'video' ? 'header' : 'header-collapsed'}>
+		<header className={currentTab === 'home' || currentTab === 'video' || navStatus === 'nav-open' ? 'header' : 'header-collapsed'}>
 			<div className='background-video-container'>
 				<Vimeo id='background-video' className='background-video' style={videoState} video='https://vimeo.com/692009875' volume={videoVolume} height={window.innerHeight} loop={true} autoplay playsInline />
 			</div>
@@ -126,6 +127,11 @@ const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
 					)}
 
 					<nav style={navOpacity} onClick={handleNavClick} className={navStatus}>
+						{window.innerWidth <= 768 && (
+							<a style={headerOpacity} href={data.url} target='_blank' rel='noreferrer'>
+								<img className='brokerage-logo' src='./assets/logos/logo-light.png' alt='Listing agent logo' />
+							</a>
+						)}
 						{window.innerWidth <= 768 && (
 							<svg className='close-mobile-nav-button' viewBox='0 0 30 22' width='25' height='25' onClick={handleMobileNavClick}>
 								<line x1='2' y1='-4' x2='28' y2='26' />
