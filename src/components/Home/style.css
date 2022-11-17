@@ -11,14 +11,18 @@
 	padding: var(--huge);
 }
 
-.home-image-break {
+.home-image-break,
+.home-image-transition {
 	display: flex;
-	/* background-attachment: fixed; */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100vw;
 	height: 80vh;
+}
+
+.home-image-transition {
+	background-attachment: fixed;
 }
 
 .property-description {
@@ -45,7 +49,8 @@
 	gap: var(--tiny);
 }
 
-.property-features {
+.property-features-left,
+.property-features-right {
 	display: flex;
 	justify-content: space-between;
 	gap: var(--large);
@@ -85,5 +90,112 @@
 
 .brokerage-details h3 {
 	line-height: 1.5;
+	width: 100%;
 	max-width: 50vw;
+}
+
+/* large screens */
+@media screen and (max-width: 1200px) {
+	.home-section {
+		gap: var(--large);
+		padding: var(--large);
+	}
+
+	.brokerage-funnel {
+		padding: var(--large);
+	}
+
+	.brokerage-details h3 {
+		max-width: 100%;
+	}
+}
+
+/* small screens */
+@media screen and (max-width: 1024px) {
+	.home-section {
+		gap: var(--large);
+		padding: var(--large);
+	}
+
+	.property-description,
+	.property-details {
+		padding: var(--medium);
+	}
+
+	.property-features-left,
+	.property-features-right {
+		justify-content: flex-start;
+		align-items: center;
+		gap: var(--medium);
+	}
+
+	.property-features-left {
+		flex-direction: column;
+	}
+
+	.property-features-right {
+		flex-direction: column-reverse;
+	}
+
+	.features {
+		gap: var(--small);
+	}
+
+	.features-image {
+		width: 100%;
+	}
+
+	.brokerage-funnel {
+		padding: var(--large);
+	}
+
+	.brokerage-details {
+		gap: var(--medium);
+		padding: var(--large) var(--medium);
+	}
+
+	.brokerage-details h3 {
+		max-width: 100%;
+	}
+}
+
+/* tablets */
+@media screen and (max-width: 768px) {
+	.home-section {
+		gap: var(--large);
+		padding: var(--large) var(--small);
+	}
+
+	.property-description,
+	.property-details {
+		flex-direction: column;
+		gap: var(--large);
+		padding: var(--small);
+	}
+
+	.property-features-left,
+	.property-features-right {
+		padding: 0;
+	}
+
+	.brokerage-funnel {
+		padding: var(--small);
+	}
+
+	.brokerage-details {
+		gap: var(--medium);
+		padding: var(--huge) var(--small);
+	}
+
+	.home-image-transition {
+		display: none;
+	}
+}
+
+/* phones */
+@media screen and (max-width: 480px) {
+	.home-section {
+		gap: var(--large);
+		padding: var(--large) var(--small);
+	}
 }

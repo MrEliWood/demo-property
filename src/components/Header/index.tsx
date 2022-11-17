@@ -17,7 +17,21 @@ const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
 	const [headerOpacity, setHeaderOpacity] = useState({ opacity: '1' });
 	const [navOpacity, setNavOpacity] = useState({ opacity: '1' });
 
-	// get background video element from page
+	// mobile nav menu
+	const [navStatus, setNavStatus] = useState('nav-hidden');
+
+	const handleMobileNavClick = () => {
+		if (window.innerWidth > 768) {
+			return;
+		} else if (navStatus === 'nav-hidden' || navStatus === 'nav-closed') {
+			setNavStatus('nav-open');
+		} else if (navStatus === 'nav-open') {
+			setNavStatus('nav-closed');
+			setTimeout(() => setNavStatus('nav-hidden'), 500);
+		}
+	};
+
+	// get background video element from page to listen for changes
 	const video = document.getElementById('background-video');
 
 	// set current tab and header style based on user selection
@@ -61,23 +75,63 @@ const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
 			default:
 				break;
 		}
+
+		// hide mobile menu after click
+		if (navStatus === 'nav-open') {
+			setNavStatus('nav-closed');
+			setTimeout(() => setNavStatus('nav-hidden'), 500);
+		}
+	};
+
+	// home page scroll effects
+	const handleScroll = () => {
+		// get scroll position
+		const scrollPosition = document.getElementById('home')?.getBoundingClientRect().top;
+
+		// if home page
+		if (currentTab === 'home') {
+			// scrolls to top, fade in video
+			if (scrollPosition && scrollPosition > window.innerHeight - 10) {
+				setVideoState({ animation: 'fade-in 1s both', height: '100vh' });
+				// scrolls to body content, fade out video
+			} else {
+				setVideoState({ animation: 'fade-out 1s both', height: '100vh' });
+			}
+		}
 	};
 
 	// listen for background video load
 	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
 		setVideoState({ animation: 'fade-in 1s both 1s', height: '100vh' });
 		// eslint-disable-next-line
 	}, [video]);
 
 	return (
 		<header className={currentTab === 'home' || currentTab === 'video' ? 'header' : 'header-collapsed'}>
-			<Vimeo id='background-video' className='background-video' style={videoState} video='https://vimeo.com/692009875' volume={videoVolume} height={window.innerHeight} loop={true} autoplay playsInline />
+			<div className='background-video-container'>
+				<Vimeo id='background-video' className='background-video' style={videoState} video='https://vimeo.com/692009875' volume={videoVolume} height={window.innerHeight} loop={true} autoplay playsInline />
+			</div>
 			<div className='header-banner'>
 				<div className='header-banner-content'>
 					<a style={headerOpacity} href={data.url} target='_blank' rel='noreferrer'>
 						<img className='brokerage-logo' src='./assets/logos/logo-light.png' alt='Listing agent logo' />
 					</a>
-					<nav style={navOpacity} onClick={handleNavClick}>
+
+					{window.innerWidth <= 768 && (
+						<svg className='mobile-nav-button' viewBox='0 0 24 12' width='30' height='15' onClick={handleMobileNavClick}>
+							<line x1='0' y1='2' x2='24' y2='2' />
+							<line x1='0' y1='11' x2='24' y2='11' />
+						</svg>
+					)}
+
+					<nav style={navOpacity} onClick={handleNavClick} className={navStatus}>
+						{window.innerWidth <= 768 && (
+							<svg className='close-mobile-nav-button' viewBox='0 0 30 22' width='25' height='25' onClick={handleMobileNavClick}>
+								<line x1='2' y1='-4' x2='28' y2='26' />
+								<line x1='2' y1='26' x2='28' y2='-4' />
+							</svg>
+						)}
 						<ul className='nav-links'>
 							<li id='nav-home' className={currentTab === 'home' ? 'tab-active' : 'tab'}>
 								Home

@@ -7,14 +7,16 @@ interface Props {
 
 const Home: React.FC<Props> = ({ data }) => {
 	return (
-		<div className='body'>
+		<div id='home' className='body'>
+			<div className='home-image-transition' style={{ backgroundImage: `url('./assets/images/image-6.jpg')` }} />
+
 			<div className='home-section'>
 				<div className='property-description'>
 					<p>{data.description}</p>
 				</div>
 			</div>
 
-			<div className='home-image-break' style={{ backgroundImage: `url('./assets/images/image-2.jpg')` }} />
+			<div className='home-image-break' style={{ backgroundImage: `url('./assets/images/image-3.jpg')` }} />
 
 			<div className='home-section'>
 				<div className='property-details'>
@@ -40,11 +42,11 @@ const Home: React.FC<Props> = ({ data }) => {
 				</div>
 			</div>
 
-			<div className='home-image-break' style={{ backgroundImage: `url('./assets/images/image-3.jpg')` }} />
+			<div className='home-image-break' style={{ backgroundImage: `url('./assets/images/image-4.jpg')` }} />
 
 			<div className='home-section'>
-				<div className='property-features'>
-					<img className='features-image' src='./assets/images/image-4.jpg' alt='property' />
+				<div className='property-features-left'>
+					<img className='features-image' src='./assets/images/image-5.jpg' alt='property' />
 
 					<div className='features'>
 						{data.features.map((feature: string, i: number) => {
@@ -57,7 +59,7 @@ const Home: React.FC<Props> = ({ data }) => {
 					</div>
 				</div>
 
-				<div className='property-features'>
+				<div className='property-features-right'>
 					<div className='features'>
 						{data.features.map((feature: string, i: number) => {
 							if (i > data.features.length / 2 - 1) {
@@ -68,7 +70,7 @@ const Home: React.FC<Props> = ({ data }) => {
 						})}
 					</div>
 
-					<img className='features-image' src='./assets/images/image-5.jpg' alt='property' />
+					<img className='features-image' src='./assets/images/image-7.jpg' alt='property' />
 				</div>
 			</div>
 

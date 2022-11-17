@@ -15,12 +15,19 @@ header {
 	transition: all 1s ease;
 }
 
-.background-video {
+.background-video-container {
 	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: 100vh;
 	width: 100vw;
 	overflow: hidden;
 	z-index: 1;
+}
+
+.background-video {
+	height: 100%;
 	opacity: 0;
 	transition: all 1s ease;
 }
@@ -95,12 +102,14 @@ nav:hover {
 .tab {
 	border-top: 1px solid transparent;
 	border-bottom: 1px solid transparent;
+	width: fit-content;
 }
 
 .tab-active {
 	cursor: default;
 	border-top: 1px solid transparent;
 	border-bottom: 1px solid var(--light);
+	width: fit-content;
 }
 
 .tab:hover {
@@ -120,4 +129,65 @@ nav:hover {
 	padding: var(--large);
 	z-index: 2;
 	transition: all 1s ease;
+}
+
+/* large screens */
+@media screen and (max-width: 1200px) {
+}
+
+/* small screens */
+@media screen and (max-width: 1024px) {
+	.header-banner-content {
+		padding: var(--medium);
+	}
+
+	.header-address {
+		padding: var(--medium);
+	}
+}
+
+/* tablets */
+@media screen and (max-width: 768px) {
+	nav {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: var(--medium);
+		background: var(--dark75);
+		-webkit-backdrop-filter: blur(15px);
+		backdrop-filter: blur(15px);
+		height: 100vh;
+		width: 100vw;
+		padding: var(--medium);
+	}
+
+	.nav-links {
+		flex-direction: column;
+		align-items: flex-end;
+		gap: var(--medium);
+		text-align: right;
+		letter-spacing: 0.075rem;
+	}
+
+	.mobile-nav-button {
+		display: flex;
+	}
+
+	.nav-open {
+		animation: fade-in 0.5s 0.5s both;
+	}
+
+	.nav-closed {
+		animation: fade-out 0.5s both;
+	}
+
+	.nav-hidden {
+		display: none;
+	}
+}
+
+/* phones */
+@media screen and (max-width: 480px) {
 }
