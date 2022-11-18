@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './style.css';
 
 interface Props {
@@ -6,14 +6,6 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({ data }) => {
-	// listen for screen resize to refresh video
-	useEffect(() => {
-		// window.addEventListener('resize', () => {
-		// 	window.location.reload();
-		// });
-		// eslint-disable-next-line
-	}, []);
-
 	return (
 		<div id='home' className='body'>
 			<div className='home-image-transition' style={{ backgroundImage: `url('./assets/images/image-6.jpg')` }} />

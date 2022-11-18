@@ -125,9 +125,29 @@ nav:hover {
 	gap: var(--small);
 	background: linear-gradient(transparent, var(--dark50));
 	width: 100%;
-	padding: var(--large);
+	padding: var(--large) var(--huge) var(--large) var(--large);
 	z-index: 2;
 	transition: all 1s ease;
+}
+
+.scroll-prompt {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	padding: var(--large);
+	z-index: 2;
+}
+
+.scroll-prompt:hover {
+	cursor: pointer;
+}
+
+.bouncing-arrow {
+	animation: bounce 1.5s ease-in-out both infinite;
 }
 
 /* large screens */
@@ -145,6 +165,10 @@ nav:hover {
 	}
 
 	.header-address {
+		padding: var(--medium) var(--huge) var(--medium) var(--medium);
+	}
+
+	.scroll-prompt {
 		padding: var(--medium);
 	}
 }
@@ -199,6 +223,19 @@ nav:hover {
 
 	.header-collapsed {
 		height: 80px;
+	}
+
+	.scroll-prompt {
+		padding: var(--medium);
+		gap: var(--tiny);
+	}
+
+	.scroll-prompt * {
+		writing-mode: vertical-rl;
+	}
+
+	.bouncing-arrow {
+		height: 50%;
 	}
 }
 

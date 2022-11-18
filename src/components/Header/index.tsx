@@ -16,6 +16,7 @@ const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
 	// set default opacity for header elements
 	const [headerOpacity, setHeaderOpacity] = useState({ opacity: '1' });
 	const [navOpacity, setNavOpacity] = useState({ opacity: '1' });
+	const [scrollOpacity, setScrollOpacity] = useState({ opacity: '1' });
 
 	// mobile nav menu
 	const [navStatus, setNavStatus] = useState('nav-hidden');
@@ -88,6 +89,9 @@ const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
 		// get scroll position
 		const scrollPosition = document.getElementById('home')?.getBoundingClientRect().top;
 
+		// remove scroll prompt
+		setScrollOpacity({ opacity: '0' });
+
 		// if home page
 		if (currentTab === 'home') {
 			// scrolls to top, fade in video
@@ -100,20 +104,30 @@ const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
 		}
 	};
 
+	// handle scroll prompt click based on screen size
+	const autoScroll = () => {
+		if (window.innerWidth > 1200) {
+			window.scroll(0, window.innerHeight * 1.7);
+		} else {
+			window.scroll(0, window.innerHeight * 0.85);
+		}
+	};
+
 	// set video size based on window dimensions
 	const renderVideo = () => {
 		const width = window.innerWidth / 16;
 		const height = window.innerHeight / 9;
 		if (width > height) {
-			return <Vimeo id='background-video' className='background-video' style={videoState} video='https://vimeo.com/692009875' volume={videoVolume} width={window.innerWidth} loop={true} autoplay playsInline />;
+			return <Vimeo id='background-video' className='background-video' style={videoState} video='https://vimeo.com/692009875' volume={videoVolume} width={window.innerWidth} controls={false} loop={true} background autoplay playsInline />;
 		} else {
-			return <Vimeo id='background-video' className='background-video' style={videoState} video='https://vimeo.com/692009875' volume={videoVolume} height={window.innerHeight} loop={true} autoplay playsInline />;
+			return <Vimeo id='background-video' className='background-video' style={videoState} video='https://vimeo.com/692009875' volume={videoVolume} height={window.innerHeight} controls={false} loop={true} background autoplay playsInline />;
 		}
 	};
 
 	// set video state on page load and scroll
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
+		window.addEventListener('resize', () => window.location.reload());
 		setVideoState({ animation: 'fade-in 1s both 1s', height: '100vh' });
 		// eslint-disable-next-line
 	}, [video]);
@@ -170,6 +184,13 @@ const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
 			<div className='header-address' style={headerOpacity}>
 				<h2>{data.city}</h2>
 				<h1>{data.address}</h1>
+			</div>
+
+			<div id='scroll-prompt' className='scroll-prompt' style={scrollOpacity} onClick={() => autoScroll()}>
+				<h4>SCROLL</h4>
+				<svg className='bouncing-arrow' viewBox='0 0 24 24' width='30' height='30'>
+					<polyline points='-3 4, 12 18, 27 4' />
+				</svg>
 			</div>
 		</header>
 	);
