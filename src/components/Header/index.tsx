@@ -127,7 +127,6 @@ const Header: React.FC<Props> = ({ currentTab, setCurrentTab, data }) => {
 	// set video state on page load and scroll
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
-		window.addEventListener('resize', () => window.location.reload());
 		setVideoState({ animation: 'fade-in 1s both 1s', height: '100vh' });
 		// eslint-disable-next-line
 	}, [video]);
