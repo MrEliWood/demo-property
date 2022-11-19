@@ -98,6 +98,7 @@ function App() {
 
 	return (
 		<div className='App'>
+			{currentTab === 'home' && <div id='video-marker' />}
 			<Header currentTab={currentTab} setCurrentTab={setCurrentTab} data={data} />
 			{renderBody()}
 			<Footer data={data} />
